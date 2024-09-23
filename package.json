@@ -1,11 +1,16 @@
 {
-  "name": "test-template",
+  "name": "dlsiem-test-template",
   "version": "1.0.0",
   "description": "a test template",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": "./create.js",
+  "files": [
+    "template"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DLSiem/test-template.git"
@@ -14,7 +19,7 @@
     "testing"
   ],
   "author": "D L Siem <pdlsiem17@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/DLSiem/test-template/issues"
   },
