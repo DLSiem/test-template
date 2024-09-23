@@ -5,10 +5,11 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "dlsiem-test-template": "./create.js"
+    "dlsiem-test-template": "./dist/create.js"
   },
   "files": [
     "template"
@@ -25,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/DLSiem/test-template/issues"
   },
-  "homepage": "https://github.com/DLSiem/test-template#readme"
+  "homepage": "https://github.com/DLSiem/test-template#readme",
+  "devDependencies": {
+    "@types/node": "^22.5.5"
+  }
 }

@@ -5,24 +5,31 @@ import path from "path";
 import { fileURLToPath } from "url";
 
 // get __filename and __dirname in ES module
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __filename: string = fileURLToPath(import.meta.url);
+const __dirname: string = path.dirname(__filename);
+console.log("Current file:");
+console.log(__filename);
+console.log("Current directory:");
+console.log(__dirname);
 
 // destination folder
-const args = process.argv.slice(2);
+const args: string[] = process.argv.slice(2);
 
-const projectDir = args[0]
+const projectDir: string = args[0]
   ? path.resolve(process.cwd(), args[0])
   : process.cwd();
 
+console.log("Setting up template...");
+console.log(`Destination folder: ${projectDir}`);
+
 // template folder
-const templateDir = path.resolve(__dirname, "template");
+const templateDir: string = path.resolve(__dirname, "../template");
 
 // function to copy files from template to destination
-const copyTemplateFiles = (src, dest) => {
-  fs.readdirSync(src).forEach((file) => {
-    const srcPath = path.join(src, file);
-    const destPath = path.join(dest, file);
+const copyTemplateFiles = (src: string, dest: string): void => {
+  fs.readdirSync(src).forEach((file: string) => {
+    const srcPath: string = path.join(src, file);
+    const destPath: string = path.join(dest, file);
     if (fs.lstatSync(srcPath).isDirectory()) {
       fs.mkdirSync(destPath, { recursive: true });
       copyTemplateFiles(srcPath, destPath);

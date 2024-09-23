@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["./create.ts"],
+  "exclude": ["node_modules"]
+}
